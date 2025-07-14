@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
 from .models import Post
 from .forms import PostForm
 
@@ -16,12 +17,14 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
+
 def signup(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            user = form.save()
+            login(request, user)
+            return redirect('post_list')
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
