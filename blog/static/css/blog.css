@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #C25100;
+    background-color: #3b69a4;
     margin-top: 0;
     margin-bottom: 40px;
     padding: 20px 20px 20px 40px;
@@ -18,11 +18,11 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Helvetica Neue';
 }
 
 .date {
-    color: #828282;
+    color: #3b69a4;
 }
 
 .save {
@@ -59,13 +59,41 @@ h4 {
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #C25100;
+    color: #3b69a4;
     background: none;
-    border-color: #C25100;
+    border-color: #3b69a4;
     margin-left: 15px;
 }
 
 .btn-secondary:hover {
     color: #FFFFFF;
-    background-color: #C25100;
+    background-color: #3b69a4;
+}
+
+#logout {
+    font-family: 'Helvetica Neue';
+}
+
+small a,
+small a:hover,
+small a:visited {
+    font-size: 15pt;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logout-button {
+    font-size: 15pt;
+    font-family: 'Helvetica Neue';
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    text-decoration: underline;
 }

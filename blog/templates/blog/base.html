@@ -16,8 +16,20 @@
                         {% include './icons/file-earmark-plus.svg' %}
                     </a>
                     <a href="{% url 'post_draft_list' %}" class="top-menu">
-                        {% include './icons/pencil-square.svg'%}
+                        {% include './icons/pencil-square.svg' %}
                     </a>
+                    <span class="top-menu" id="logout">
+                        Hello {{ user.username }}
+                        <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="logout-button">(Log out)</button>
+                        </form>
+                    </span>
+                {% else %}
+                    <a href="{% url 'login' %}" class="top-menu">
+                        {% include './icons/lock-fill.svg' %}
+                    </a>
+                    <a href="{% url 'signup' %}" class="top-menu">Sign up</a>
                 {% endif %}
                 <h1><a href="/">Django Test Site</a></h1>
             </div>
