@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(221, 83%, 53%);
+  --primary-foreground: hsl(210, 100%, 98%);
+  --secondary: hsl(160, 84%, 39%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(221, 83%, 53%);
+  --primary-foreground: hsl(210, 100%, 98%);
+  --secondary: hsl(160, 84%, 39%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom styles for the app */
+.edugis-header {
+  @apply bg-white border-b border-slate-200 h-16;
+}
+
+.edugis-main {
+  @apply flex-1 overflow-y-auto bg-slate-50;
+}
+
+.edugis-card {
+  @apply bg-white rounded-lg shadow-sm;
+}
+
+.edugis-btn-primary {
+  @apply bg-primary text-white hover:bg-blue-700 transition-colors;
+}
+
+.edugis-btn-secondary {
+  @apply bg-secondary text-white hover:bg-emerald-700 transition-colors;
+}
+
+.edugis-status-pending {
+  @apply bg-amber-100 text-amber-800;
+}
+
+.edugis-status-graded {
+  @apply bg-emerald-100 text-emerald-800;
+}
+
+.edugis-status-active {
+  @apply bg-emerald-100 text-emerald-800;
+}
+
+.edugis-status-draft {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.edugis-status-submitted {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.edugis-status-in-progress {
+  @apply bg-amber-100 text-amber-800;
+}
+
+.edugis-status-due-soon {
+  @apply bg-red-100 text-red-800;
+}
+
+.edugis-tool-btn {
+  @apply p-3 border border-slate-300 rounded-lg hover:bg-slate-50 text-center transition-colors;
+}
+
+.edugis-tool-btn.active {
+  @apply border-primary bg-blue-50;
+}
+
+.edugis-map-container {
+  @apply relative min-h-96 bg-gray-100 rounded-lg overflow-hidden;
+}
+
+.leaflet-container {
+  @apply h-full w-full;
+}
