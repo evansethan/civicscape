@@ -1,0 +1,1 @@
+ALTER TABLE ai_chat_messages ADD CONSTRAINT ai_chat_messages_user_id_unique UNIQUE (user_id);
